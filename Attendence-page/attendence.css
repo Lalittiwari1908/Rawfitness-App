@@ -1,0 +1,638 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   APP WIDTH
+========================= */
+
+header,
+.attendance-page {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+
+    background-color: #170312;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+.profile {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.attendance-page {
+    min-height: 100vh;
+
+    padding: 10px 15px 100px;
+}
+
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.attendance-heading {
+    margin: 15px 0 25px;
+}
+
+.attendance-heading h1 {
+    font-size: 32px;
+
+    margin-bottom: 5px;
+}
+
+.attendance-heading p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ATTENDANCE STATS
+========================= */
+
+.attendance-stats {
+    min-height: 150px;
+
+    padding: 15px;
+
+    border: 1px solid #104547;
+    border-radius: 12px;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background-color: #10454725;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   PERCENTAGE CIRCLE
+========================= */
+
+.percentage-circle {
+    width: 95px;
+    height: 95px;
+
+    border: 8px solid #1ec7b7;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-circle h2 {
+    font-size: 24px;
+}
+
+
+/* =========================
+   MONTHLY STATS
+========================= */
+
+.monthly-stat h3 {
+    font-size: 16px;
+
+    line-height: 20px;
+
+    margin-bottom: 8px;
+}
+
+.monthly-stat p {
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   STREAK
+========================= */
+
+.streak-stat {
+    padding-left: 12px;
+
+    border-left: 1px solid #104547;
+}
+
+.streak-number {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.fire {
+    font-size: 25px;
+}
+
+.streak-number h2 {
+    font-size: 35px;
+}
+
+.streak-stat > p {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.streak-stat > span {
+    color: #1ec7b7;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MARK ATTENDANCE BUTTON
+========================= */
+
+#mark-attendance {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #C81D25;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#mark-attendance span {
+    margin-right: 7px;
+}
+
+#mark-attendance:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-card {
+    padding: 15px;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    font-size: 19px;
+}
+
+
+/* =========================
+   CALENDAR SCROLL
+========================= */
+
+.calendar-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+}
+
+.calendar-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.calendar-days {
+    display: flex;
+
+    gap: 8px;
+
+    width: max-content;
+
+    padding-bottom: 10px;
+}
+
+
+/* =========================
+   SINGLE DAY
+========================= */
+
+.day {
+    width: 48px;
+    min-width: 48px;
+
+    padding: 8px 3px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 25px;
+}
+
+.day p {
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.date-number {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+}
+
+
+/* TODAY */
+
+.day.today .date-number {
+    background-color: #C81D25;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   STATUS DOT
+========================= */
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.status-dot.present {
+    background-color: #1ec7b7;
+}
+
+.status-dot.absent {
+    border: 2px solid #777;
+
+    background-color: transparent;
+}
+
+.status-dot.today-dot {
+    background-color: #C81D25;
+}
+
+
+/* =========================
+   CALENDAR LEGEND
+========================= */
+
+.calendar-legend {
+    margin-top: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.calendar-legend div {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.calendar-legend p {
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   RECENT ATTENDANCE
+========================= */
+
+.recent-attendance {
+    padding: 15px;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+}
+
+.recent-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.recent-heading h2 {
+    font-size: 19px;
+}
+
+.recent-heading button {
+    border: 0;
+
+    background: none;
+
+    color: #C81D25;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ATTENDANCE ROW
+========================= */
+
+.attendance-row {
+    min-height: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #333;
+}
+
+.attendance-row:last-child {
+    border-bottom: 0;
+}
+
+.attendance-row > p {
+    font-size: 14px;
+}
+
+.attendance-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.attendance-status > span:first-child {
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+
+/* CHECK / CROSS */
+
+.check,
+.cross {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: #000;
+
+    font-weight: bold;
+}
+
+.check {
+    background-color: #1ec7b7;
+}
+
+.cross {
+    background-color: #C81D25;
+
+    color: white;
+}
+
+
+/* =========================
+   MOTIVATION
+========================= */
+
+.attendance-motivation {
+    min-height: 90px;
+
+    padding: 18px;
+
+    border: 1px solid #104547;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    background-color: #10454720;
+}
+
+.attendance-motivation > span {
+    color: #1ec7b7;
+
+    font-size: 35px;
+}
+
+.attendance-motivation p {
+    color: #aaa;
+
+    font-size: 15px;
+    font-style: italic;
+
+    line-height: 22px;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 430px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    padding: 12px 0;
+
+    background-color: #170312;
+
+    border-top: 1px solid #444;
+}
+
+.bottom-nav a {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #888;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+.bottom-nav a > div {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav a svg {
+    display: block;
+
+    width: 26px;
+    height: 26px;
+}
+
+.bottom-nav a span {
+    text-align: center;
+}
+
+.bottom-nav a.active {
+    color: #C81D25;
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .attendance-stats {
+        grid-template-columns: 85px 1fr 1fr;
+
+        gap: 8px;
+
+        padding: 12px;
+    }
+
+    .percentage-circle {
+        width: 80px;
+        height: 80px;
+
+        border-width: 7px;
+    }
+
+    .percentage-circle h2 {
+        font-size: 20px;
+    }
+
+    .monthly-stat h3 {
+        font-size: 14px;
+    }
+
+    .streak-number h2 {
+        font-size: 28px;
+    }
+
+}
